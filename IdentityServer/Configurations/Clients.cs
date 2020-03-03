@@ -13,7 +13,7 @@ namespace IdentityServer.Configurations
                 {
                     ClientId = "oauthClient",
                     ClientName = "Example Client Credential Client Application",
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets = new List<Secret>
                     {
                         new Secret("superSecretPassword".Sha256()) // Create secrect password

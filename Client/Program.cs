@@ -20,15 +20,24 @@ namespace Client
                 return;
             }
 
+            //// request token
+            //var tokenResponse = await client.RequestPasswordTokenAsync(new PasswordTokenRequest
+            //{
+            //    Address = disco.TokenEndpoint,
+            //    ClientId = "oauthClient",
+            //    ClientSecret = "superSecretPassword",
+            //    Scope = "customAPI.read",
+            //    UserName = "anbinhtrong",
+            //    Password = "password123"
+            //});
+
             // request token
-            var tokenResponse = await client.RequestPasswordTokenAsync(new PasswordTokenRequest
+            var tokenResponse = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
             {
                 Address = disco.TokenEndpoint,
                 ClientId = "oauthClient",
                 ClientSecret = "superSecretPassword",
-                Scope = "customAPI.read",
-                UserName = "anbinhtrong",
-                Password = "password123"
+                Scope = "customAPI.read"
             });
 
             if (tokenResponse.IsError)
